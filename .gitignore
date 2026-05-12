@@ -1,0 +1,11 @@
+# Build results
+bin/
+obj/
+*.user
+*.suo
+.vs/
+packages/
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
