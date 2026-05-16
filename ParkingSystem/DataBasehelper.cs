@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SQLite;
-using System.Data;
 using System.Windows.Forms;
 
 namespace ParkingSystem
@@ -210,34 +211,53 @@ namespace ParkingSystem
             return dt.Rows.Count > 0 ? dt.Rows[0] : null;
         }
 
-        public static void ProcessExit(string plate)
+        public static bool ProcessExit(string plate, string exitTime, decimal fee)
         {
             using (var con = new SQLiteConnection(connectionString))
             {
                 con.Open();
+                using (var transaction = con.BeginTransaction())
+                {
+                    try
+                    {
+                        // 1. Get slot first so we can free it
+                        string getSlot = @"SELECT Slot FROM ParkingRecords 
+                                   WHERE Plate = @plate 
+                                   AND (ExitTime IS NULL OR ExitTime = '')";
+                        SQLiteCommand getCmd = new SQLiteCommand(getSlot, con);
+                        getCmd.Parameters.AddWithValue("@plate", plate);
+                        string slot = getCmd.ExecuteScalar()?.ToString();
 
-                // Get slot first so we can free it
-                string getSlot = @"SELECT Slot FROM ParkingRecords 
-                           WHERE Plate = @plate 
-                           AND (ExitTime IS NULL OR ExitTime = '')";
-                SQLiteCommand getCmd = new SQLiteCommand(getSlot, con);
-                getCmd.Parameters.AddWithValue("@plate", plate);
-                string slot = getCmd.ExecuteScalar()?.ToString();
+                        // 2. Set exit time AND the calculated Fee
+                        string sql = @"UPDATE ParkingRecords 
+                               SET ExitTime = @exit, Fee = @fee
+                               WHERE Plate = @plate 
+                               AND (ExitTime IS NULL OR ExitTime = '')";
 
-                // Set exit time
-                string sql = @"UPDATE ParkingRecords 
-                       SET ExitTime = @exit 
-                       WHERE Plate = @plate 
-                       AND (ExitTime IS NULL OR ExitTime = '')";
+                        SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                        cmd.Parameters.AddWithValue("@exit", exitTime);
+                        cmd.Parameters.AddWithValue("@fee", fee); // Saves the exact amount
+                        cmd.Parameters.AddWithValue("@plate", plate);
+                        cmd.ExecuteNonQuery();
 
-                SQLiteCommand cmd = new SQLiteCommand(sql, con);
-                cmd.Parameters.AddWithValue("@exit", DateTime.Now.ToString("MM/dd/yyyy hh:mm tt"));
-                cmd.Parameters.AddWithValue("@plate", plate);
-                cmd.ExecuteNonQuery();
+                        // 3. Free the slot
+                        if (!string.IsNullOrEmpty(slot))
+                        {
+                            string sqlFree = "UPDATE ParkingSlots SET IsOccupied=0 WHERE SlotNumber=@slot";
+                            SQLiteCommand cmdFree = new SQLiteCommand(sqlFree, con);
+                            cmdFree.Parameters.AddWithValue("@slot", slot);
+                            cmdFree.ExecuteNonQuery();
+                        }
 
-                // Free the slot
-                if (!string.IsNullOrEmpty(slot))
-                    FreeSlot(slot);
+                        transaction.Commit();
+                        return true;
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                        return false;
+                    }
+                }
             }
         }
 
@@ -314,6 +334,58 @@ namespace ParkingSystem
             }
 
             return dt;
+
+
+        }
+
+        public static bool DeleteTransaction(string parkingNumber)
+        {
+            using (var con = GetConnection())
+            {
+                con.Open();
+                using (var transaction = con.BeginTransaction())
+                {
+                    try
+                    {
+                        // 1. Get the slot associated with this record before deleting
+                        string getSlotSql = "SELECT Slot FROM ParkingRecords WHERE ParkingNumber = @no";
+                        string slot = "";
+                        using (var cmdGet = new SQLiteCommand(getSlotSql, con))
+                        {
+                            cmdGet.Parameters.AddWithValue("@no", parkingNumber);
+                            slot = cmdGet.ExecuteScalar()?.ToString();
+                        }
+
+                        // 2. Delete the record
+                        string deleteSql = "DELETE FROM ParkingRecords WHERE ParkingNumber = @no";
+                        using (var cmdDel = new SQLiteCommand(deleteSql, con))
+                        {
+                            cmdDel.Parameters.AddWithValue("@no", parkingNumber);
+                            cmdDel.ExecuteNonQuery();
+                        }
+
+                        // 3. If a slot was found, mark it as available (just in case it was an 'Active' record)
+                        if (!string.IsNullOrEmpty(slot))
+                        {
+                            string updateSlotSql = "UPDATE ParkingSlots SET IsOccupied = 0 WHERE SlotNumber = @slot";
+                            using (var cmdSlot = new SQLiteCommand(updateSlotSql, con))
+                            {
+                                cmdSlot.Parameters.AddWithValue("@slot", slot);
+                                cmdSlot.ExecuteNonQuery();
+                            }
+                        }
+
+                        transaction.Commit();
+                        return true;
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        return false;
+                    }
+                }
+            }
+
         }
     }
 }

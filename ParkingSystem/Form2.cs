@@ -158,17 +158,9 @@ namespace ParkingSystem
             f3.Show();
         }
 
-        private void btnSlot_Click(object sender, EventArgs e)
-        {
-            Form4 f4 = new Form4();
-            f4.Show();
-        }
 
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            Form5 f5 = new Form5();
-            f5.Show();
-        }
+
+
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -188,5 +180,39 @@ namespace ParkingSystem
         private void TotalOccPanel_Paint(object sender, PaintEventArgs e) { }
         private void TotalsltsPanel_Paint(object sender, PaintEventArgs e) { }
         private void TotalOcclabel_Click(object sender, EventArgs e) { }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            // Check if a row is selected in the DataGridView
+            if (dgvRecentTrans.SelectedRows.Count > 0)
+            {
+                // Get the Parking Number (#) from the selected row
+                // Make sure "ParkingNo" matches the 'Name' property of your column in the designer
+                string parkingNo = dgvRecentTrans.SelectedRows[0].Cells["ParkingNo"].Value.ToString();
+
+                DialogResult confirm = MessageBox.Show(
+                    $"Are you sure you want to delete record {parkingNo}?\nThis will also free up its parking slot.",
+                    "Confirm Delete",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    if (DataBasehelper.DeleteTransaction(parkingNo))
+                    {
+                        MessageBox.Show("Record deleted successfully.");
+                        RefreshDashboard(); // Update the grid and the colorful slot panels
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete the record.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a transaction from the list first.");
+            }
+        }
     }
 }

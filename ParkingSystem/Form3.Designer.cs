@@ -30,11 +30,8 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
-            this.btnSlot = new System.Windows.Forms.Button();
             this.btnParking = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -60,11 +57,13 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dgvVehicleLog = new System.Windows.Forms.DataGridView();
             this.btnNewEntry = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -72,12 +71,10 @@
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.BackgroundImage = global::ParkingSystem.Properties.Resources._66;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnLogout);
-            this.panel2.Controls.Add(this.btnReport);
-            this.panel2.Controls.Add(this.btnSlot);
             this.panel2.Controls.Add(this.btnParking);
             this.panel2.Controls.Add(this.btnDashboard);
-            this.panel2.Controls.Add(this.label8);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -98,38 +95,12 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnReport
-            // 
-            this.btnReport.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReport.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnReport.Location = new System.Drawing.Point(3, 300);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(231, 45);
-            this.btnReport.TabIndex = 19;
-            this.btnReport.Text = "📄 Reports";
-            this.btnReport.UseVisualStyleBackColor = false;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
-            // 
-            // btnSlot
-            // 
-            this.btnSlot.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnSlot.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSlot.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSlot.Location = new System.Drawing.Point(3, 235);
-            this.btnSlot.Name = "btnSlot";
-            this.btnSlot.Size = new System.Drawing.Size(233, 45);
-            this.btnSlot.TabIndex = 18;
-            this.btnSlot.Text = "🎰 Slot";
-            this.btnSlot.UseVisualStyleBackColor = false;
-            this.btnSlot.Click += new System.EventHandler(this.btnSlot_Click);
-            // 
             // btnParking
             // 
             this.btnParking.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.btnParking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnParking.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnParking.Location = new System.Drawing.Point(3, 163);
+            this.btnParking.Location = new System.Drawing.Point(3, 335);
             this.btnParking.Name = "btnParking";
             this.btnParking.Size = new System.Drawing.Size(231, 45);
             this.btnParking.TabIndex = 17;
@@ -142,7 +113,7 @@
             this.btnDashboard.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDashboard.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDashboard.Location = new System.Drawing.Point(3, 96);
+            this.btnDashboard.Location = new System.Drawing.Point(3, 268);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(231, 45);
             this.btnDashboard.TabIndex = 16;
@@ -150,20 +121,10 @@
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(40, 21);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(121, 25);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "ParkSmart";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.label9.BackColor = System.Drawing.SystemColors.WindowText;
             this.label9.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label9.Location = new System.Drawing.Point(298, 21);
@@ -175,7 +136,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.label1.BackColor = System.Drawing.SystemColors.WindowText;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
@@ -421,7 +382,7 @@
             // 
             // btnNewEntry
             // 
-            this.btnNewEntry.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnNewEntry.BackColor = System.Drawing.SystemColors.WindowText;
             this.btnNewEntry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNewEntry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNewEntry.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -434,12 +395,21 @@
             this.btnNewEntry.UseVisualStyleBackColor = false;
             this.btnNewEntry.Click += new System.EventHandler(this.btnNewEntry_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::ParkingSystem.Properties.Resources.Screenshot_2026_05_15_222640;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(41, 205);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 40);
+            this.pictureBox1.TabIndex = 39;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BackgroundImage = global::ParkingSystem.Properties.Resources.Yumurta_yla_Tasarım_Dersleri;
+            this.BackColor = System.Drawing.SystemColors.WindowText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1239, 633);
             this.Controls.Add(this.btnNewEntry);
@@ -453,13 +423,13 @@
             this.Text = "Parking Form";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,7 +439,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button prcsBtn;
         private System.Windows.Forms.Label label11;
@@ -480,8 +449,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dgvVehicleLog;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnSlot;
         private System.Windows.Forms.Button btnParking;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -498,5 +465,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnNewEntry;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

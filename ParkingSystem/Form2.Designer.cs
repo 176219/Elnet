@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
-            this.btnSlot = new System.Windows.Forms.Button();
             this.btnParking = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnNewEntry = new System.Windows.Forms.Button();
@@ -59,6 +57,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.CurrntDateGreetingLabel = new System.Windows.Forms.Label();
             this.dgvRecentTrans = new System.Windows.Forms.DataGridView();
+            this.ParkingNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SlotColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -93,12 +96,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.ParkingNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SlotColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.TotalsltsPanel.SuspendLayout();
             this.TotalOccPanel.SuspendLayout();
             this.totalAvailPanel.SuspendLayout();
@@ -126,10 +126,8 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.BackgroundImage = global::ParkingSystem.Properties.Resources._66;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Controls.Add(this.btnReport);
-            this.panel1.Controls.Add(this.btnSlot);
             this.panel1.Controls.Add(this.btnParking);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -138,15 +136,15 @@
             this.panel1.Size = new System.Drawing.Size(242, 633);
             this.panel1.TabIndex = 0;
             // 
-            // label12
+            // pictureBox2
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(40, 21);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(121, 25);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "ParkSmart";
+            this.pictureBox2.BackgroundImage = global::ParkingSystem.Properties.Resources.Screenshot_2026_05_15_222640;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(41, 205);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(135, 40);
+            this.pictureBox2.TabIndex = 38;
+            this.pictureBox2.TabStop = false;
             // 
             // btnLogout
             // 
@@ -162,38 +160,12 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnReport
-            // 
-            this.btnReport.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReport.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnReport.Location = new System.Drawing.Point(3, 300);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(236, 45);
-            this.btnReport.TabIndex = 4;
-            this.btnReport.Text = "📄 Reports";
-            this.btnReport.UseVisualStyleBackColor = false;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
-            // 
-            // btnSlot
-            // 
-            this.btnSlot.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnSlot.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSlot.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSlot.Location = new System.Drawing.Point(3, 234);
-            this.btnSlot.Name = "btnSlot";
-            this.btnSlot.Size = new System.Drawing.Size(236, 45);
-            this.btnSlot.TabIndex = 3;
-            this.btnSlot.Text = "🎰 Slot";
-            this.btnSlot.UseVisualStyleBackColor = false;
-            this.btnSlot.Click += new System.EventHandler(this.btnSlot_Click);
-            // 
             // btnParking
             // 
             this.btnParking.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.btnParking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnParking.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnParking.Location = new System.Drawing.Point(3, 164);
+            this.btnParking.Location = new System.Drawing.Point(3, 335);
             this.btnParking.Name = "btnParking";
             this.btnParking.Size = new System.Drawing.Size(236, 45);
             this.btnParking.TabIndex = 2;
@@ -206,7 +178,7 @@
             this.btnDashboard.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDashboard.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDashboard.Location = new System.Drawing.Point(3, 95);
+            this.btnDashboard.Location = new System.Drawing.Point(3, 268);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(236, 45);
             this.btnDashboard.TabIndex = 1;
@@ -216,7 +188,7 @@
             // 
             // btnNewEntry
             // 
-            this.btnNewEntry.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnNewEntry.BackColor = System.Drawing.SystemColors.WindowText;
             this.btnNewEntry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNewEntry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNewEntry.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -432,7 +404,6 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Image = global::ParkingSystem.Properties.Resources.Yumurta_yla_Tasarım_Dersleri;
             this.label9.Location = new System.Drawing.Point(278, 44);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(112, 34);
@@ -466,7 +437,6 @@
             this.CurrntDateGreetingLabel.AutoSize = true;
             this.CurrntDateGreetingLabel.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrntDateGreetingLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.CurrntDateGreetingLabel.Image = global::ParkingSystem.Properties.Resources.Yumurta_yla_Tasarım_Dersleri;
             this.CurrntDateGreetingLabel.Location = new System.Drawing.Point(278, 68);
             this.CurrntDateGreetingLabel.Name = "CurrntDateGreetingLabel";
             this.CurrntDateGreetingLabel.Size = new System.Drawing.Size(281, 23);
@@ -486,17 +456,47 @@
             this.StatusColumn});
             this.dgvRecentTrans.Location = new System.Drawing.Point(279, 300);
             this.dgvRecentTrans.Name = "dgvRecentTrans";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecentTrans.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecentTrans.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRecentTrans.Size = new System.Drawing.Size(297, 321);
             this.dgvRecentTrans.TabIndex = 24;
             this.dgvRecentTrans.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecentTrans_CellContentClick);
+            // 
+            // ParkingNo
+            // 
+            this.ParkingNo.HeaderText = "#";
+            this.ParkingNo.Name = "ParkingNo";
+            this.ParkingNo.Width = 39;
+            // 
+            // PlateColumn
+            // 
+            this.PlateColumn.HeaderText = "Plate";
+            this.PlateColumn.Name = "PlateColumn";
+            this.PlateColumn.Width = 56;
+            // 
+            // SlotColumn
+            // 
+            this.SlotColumn.HeaderText = "Slot";
+            this.SlotColumn.Name = "SlotColumn";
+            this.SlotColumn.Width = 50;
+            // 
+            // FeeColumn
+            // 
+            this.FeeColumn.HeaderText = "Fee";
+            this.FeeColumn.Name = "FeeColumn";
+            this.FeeColumn.Width = 50;
+            // 
+            // StatusColumn
+            // 
+            this.StatusColumn.HeaderText = "Status";
+            this.StatusColumn.Name = "StatusColumn";
+            this.StatusColumn.Width = 62;
             // 
             // label20
             // 
@@ -881,45 +881,28 @@
             this.label21.Text = "Zone A ";
             this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
-            // ParkingNo
+            // btnDelete
             // 
-            this.ParkingNo.HeaderText = "#";
-            this.ParkingNo.Name = "ParkingNo";
-            this.ParkingNo.Width = 39;
-            // 
-            // PlateColumn
-            // 
-            this.PlateColumn.HeaderText = "Plate";
-            this.PlateColumn.Name = "PlateColumn";
-            this.PlateColumn.Width = 56;
-            // 
-            // SlotColumn
-            // 
-            this.SlotColumn.HeaderText = "Slot";
-            this.SlotColumn.Name = "SlotColumn";
-            this.SlotColumn.Width = 50;
-            // 
-            // FeeColumn
-            // 
-            this.FeeColumn.HeaderText = "Fee";
-            this.FeeColumn.Name = "FeeColumn";
-            this.FeeColumn.Width = 50;
-            // 
-            // StatusColumn
-            // 
-            this.StatusColumn.HeaderText = "Status";
-            this.StatusColumn.Name = "StatusColumn";
-            this.StatusColumn.Width = 62;
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnDelete.Location = new System.Drawing.Point(501, 267);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 26;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Dashboard
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.WhiteSpace;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.BackgroundImage = global::ParkingSystem.Properties.Resources.Yumurta_yla_Tasarım_Dersleri;
+            this.BackColor = System.Drawing.SystemColors.WindowText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1239, 633);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dgvRecentTrans);
             this.Controls.Add(this.CurrntDateGreetingLabel);
             this.Controls.Add(this.panel7);
@@ -937,7 +920,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.TotalsltsPanel.ResumeLayout(false);
             this.TotalsltsPanel.PerformLayout();
             this.TotalOccPanel.ResumeLayout(false);
@@ -986,8 +969,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnSlot;
         private System.Windows.Forms.Button btnParking;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnNewEntry;
@@ -1006,7 +987,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label CurrntDateGreetingLabel;
         private System.Windows.Forms.Label TotalSltsLabel;
         private System.Windows.Forms.Label TotalOcclabel;
@@ -1053,5 +1033,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SlotColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn FeeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusColumn;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

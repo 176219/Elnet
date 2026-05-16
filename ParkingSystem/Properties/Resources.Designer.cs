@@ -93,6 +93,16 @@ namespace ParkingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_pjoef4pjoef4pjoe {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_pjoef4pjoef4pjoe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap images__8_ {
             get {
                 object obj = ResourceManager.GetObject("images (8)", resourceCulture);
@@ -106,6 +116,26 @@ namespace ParkingSystem.Properties {
         internal static System.Drawing.Bitmap IoT_based_Smart_Parking_System_Development___MobiDev {
             get {
                 object obj = ResourceManager.GetObject("IoT-based Smart Parking System Development - MobiDev", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2026_05_15_222640 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2026-05-15 222640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_Project__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Untitled Project (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

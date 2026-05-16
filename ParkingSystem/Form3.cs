@@ -15,7 +15,7 @@ namespace ParkingSystem
         public Form3()
         {
             InitializeComponent();
-    
+
         }
 
         private void btnParking_Click(object sender, EventArgs e)
@@ -33,8 +33,7 @@ namespace ParkingSystem
 
         private void btnSlot_Click(object sender, EventArgs e)
         {
-            Form4 f4 = new Form4();
-            f4.Show();
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -42,12 +41,6 @@ namespace ParkingSystem
             Application.Exit();
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            Form5 f5 = new Form5();
-            f5.Show();
-
-        }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -142,18 +135,64 @@ namespace ParkingSystem
 
             if (confirm == DialogResult.Yes)
             {
-                DataBasehelper.ProcessExit(plate);
-                exttimelbl.Text = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
+                // Capture data BEFORE processing exit
+                string parkingNo = prklbl.Text;
+                string plateNo = platelbl.Text;
+                string type = typelbl.Text;
+                string slot = slotlbl.Text;
+                string entryTime = entrytimelbl.Text;
+                string exitTime = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
 
-                MessageBox.Show("Exit processed successfully!", "Done",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // ── Calculate parking fee ──────────────────────────────────────
+                decimal amount = CalculateFee(entryTime, exitTime, type);
 
-                // Refresh the vehicle log grid
+                // Process the exit in the database
+                bool success = DataBasehelper.ProcessExit(plate, exitTime, amount);
+
+                exttimelbl.Text = exitTime;
+
+                // ── Open the Receipt form ─────────────────────────────────────
+                Receipt receipt = new Receipt(parkingNo, plateNo, type,
+                                              slot, entryTime, exitTime, amount);
+                receipt.ShowDialog();  // ShowDialog so it blocks until user closes/prints
+
+                // Refresh and clear
                 LoadVehicleLogs();
-
-                // Clear after a short delay so user sees the exit time
                 txtbSearchPlate.Clear();
                 ClearExitFields();
+            }
+
+        }
+
+        // ── Fee calculator ────────────────────────────────────────────────────────────
+        private decimal CalculateFee(string entryTimeStr, string exitTimeStr, string vehicleType)
+        {
+            // 1. Get the Base Rate from DataBasehelper (matching your Modal logic)
+            decimal baseRate = DataBasehelper.CalculateFee(vehicleType);
+
+            try
+            {
+                DateTime entry = DateTime.Parse(entryTimeStr);
+                DateTime exit = DateTime.Parse(exitTimeStr);
+
+                double totalHours = (exit - entry).TotalHours;
+
+                // If they stayed less than 8 hours, they pay the base rate
+                if (totalHours <= 8)
+                {
+                    return baseRate;
+                }
+                else
+                {
+                    // Example: ₱20 for every additional 8 hours (or part thereof)
+                    // Adjust the '20m' to whatever your overtime rate is
+                    int extraBlocks = (int)Math.Ceiling((totalHours - 8) / 8.0);
+                    return baseRate + (extraBlocks * 20m);
+                }
+            }
+            catch
+            {
+                return baseRate; // Fallback to base rate if dates are messy
             }
         }
 
@@ -200,6 +239,18 @@ namespace ParkingSystem
             slotlbl.Text = "";
             entrytimelbl.Text = "";
             exttimelbl.Text = "";
+        }
+
+        private void txtbSearchVehicle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
