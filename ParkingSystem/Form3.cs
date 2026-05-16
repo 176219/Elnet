@@ -12,23 +12,23 @@ namespace ParkingSystem
 {
     public partial class Form3 : Form
     {
-        public Form3()
+        private Form _previousForm;
+        public Form3(Form previousForm = null)
         {
             InitializeComponent();
+            _previousForm = previousForm;
+            this.FormClosed += (s, e) => _previousForm?.Show();
 
         }
 
         private void btnParking_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
-            f3.Show();
-            this.Hide();
+
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Dashboard f3 = new Dashboard();
-            f3.Show();
+            this.Close();
         }
 
         private void btnSlot_Click(object sender, EventArgs e)

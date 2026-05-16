@@ -110,14 +110,12 @@ namespace ParkingSystem
                 { "A4", panel10 },
                 { "A5", panel11 },
                 { "A6", panel12 },
-                { "A7", panel2  },
                 { "B1", panel13 },
                 { "B2", panel14 },
                 { "B3", panel15 },
                 { "B4", panel16 },
                 { "B5", panel17 },
                 { "B6", panel18 },
-                { "B7", panel3  }
             };
 
             foreach (var kvp in slotControls)
@@ -148,13 +146,13 @@ namespace ParkingSystem
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Dashboard f = new Dashboard();
-            f.Show();
+
         }
 
         private void btnParking_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
+            this.Hide();
+            Form3 f3 = new Form3(this); 
             f3.Show();
         }
 

@@ -28,13 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.btnParking = new System.Windows.Forms.Button();
-            this.btnDashboard = new System.Windows.Forms.Button();
-            this.btnNewEntry = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TotalsltsPanel = new System.Windows.Forms.Panel();
             this.TotalSltsLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,14 +56,8 @@
             this.SlotColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label34 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -96,17 +84,20 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnParking = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.TotalsltsPanel.SuspendLayout();
             this.TotalOccPanel.SuspendLayout();
             this.totalAvailPanel.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecentTrans)).BeginInit();
             this.panel7.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -119,86 +110,9 @@
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel1.BackgroundImage = global::ParkingSystem.Properties.Resources._66;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Controls.Add(this.btnParking);
-            this.panel1.Controls.Add(this.btnDashboard);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(242, 633);
-            this.panel1.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::ParkingSystem.Properties.Resources.Screenshot_2026_05_15_222640;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(41, 205);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(135, 40);
-            this.pictureBox2.TabIndex = 38;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogout.Font = new System.Drawing.Font("Myanmar Text", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnLogout.Location = new System.Drawing.Point(12, 468);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(222, 69);
-            this.btnLogout.TabIndex = 5;
-            this.btnLogout.Text = "⏻ Logout";
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // btnParking
-            // 
-            this.btnParking.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnParking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnParking.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnParking.Location = new System.Drawing.Point(3, 335);
-            this.btnParking.Name = "btnParking";
-            this.btnParking.Size = new System.Drawing.Size(236, 45);
-            this.btnParking.TabIndex = 2;
-            this.btnParking.Text = "🅿 Parking";
-            this.btnParking.UseVisualStyleBackColor = false;
-            this.btnParking.Click += new System.EventHandler(this.btnParking_Click);
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDashboard.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDashboard.Location = new System.Drawing.Point(3, 268);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(236, 45);
-            this.btnDashboard.TabIndex = 1;
-            this.btnDashboard.Text = "🏠︎ Dashboard";
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
-            // 
-            // btnNewEntry
-            // 
-            this.btnNewEntry.BackColor = System.Drawing.SystemColors.WindowText;
-            this.btnNewEntry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnNewEntry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNewEntry.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewEntry.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNewEntry.Location = new System.Drawing.Point(1109, 44);
-            this.btnNewEntry.Name = "btnNewEntry";
-            this.btnNewEntry.Size = new System.Drawing.Size(102, 32);
-            this.btnNewEntry.TabIndex = 6;
-            this.btnNewEntry.Text = "➕ New Entry";
-            this.btnNewEntry.UseVisualStyleBackColor = false;
             // 
             // TotalsltsPanel
             // 
@@ -426,7 +340,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(638, 259);
+            this.label11.Location = new System.Drawing.Point(671, 259);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(135, 34);
             this.label11.TabIndex = 13;
@@ -456,14 +370,14 @@
             this.StatusColumn});
             this.dgvRecentTrans.Location = new System.Drawing.Point(279, 300);
             this.dgvRecentTrans.Name = "dgvRecentTrans";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecentTrans.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecentTrans.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvRecentTrans.Size = new System.Drawing.Size(297, 321);
             this.dgvRecentTrans.TabIndex = 24;
             this.dgvRecentTrans.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecentTrans_CellContentClick);
@@ -498,49 +412,23 @@
             this.StatusColumn.Name = "StatusColumn";
             this.StatusColumn.Width = 62;
             // 
-            // label20
+            // btnDelete
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Lime;
-            this.label20.Location = new System.Drawing.Point(10, 16);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(69, 15);
-            this.label20.TabIndex = 32;
-            this.label20.Text = "◼ Available";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.label19.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Orange;
-            this.label19.Location = new System.Drawing.Point(85, 16);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(72, 15);
-            this.label19.TabIndex = 33;
-            this.label19.Text = "◼ Occupied";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label17.Location = new System.Drawing.Point(163, 16);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 15);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "◼ Reserved";
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnDelete.Location = new System.Drawing.Point(501, 267);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 26;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel7.BackgroundImage = global::ParkingSystem.Properties.Resources.download__5_;
-            this.panel7.Controls.Add(this.panel3);
-            this.panel7.Controls.Add(this.panel2);
             this.panel7.Controls.Add(this.panel18);
             this.panel7.Controls.Add(this.panel17);
             this.panel7.Controls.Add(this.panel16);
@@ -558,53 +446,11 @@
             this.panel7.Controls.Add(this.label17);
             this.panel7.Controls.Add(this.label19);
             this.panel7.Controls.Add(this.label20);
-            this.panel7.Location = new System.Drawing.Point(636, 293);
+            this.panel7.Location = new System.Drawing.Point(669, 293);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(575, 328);
+            this.panel7.Size = new System.Drawing.Size(491, 328);
             this.panel7.TabIndex = 15;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Location = new System.Drawing.Point(481, 232);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(70, 78);
-            this.panel3.TabIndex = 39;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.label14.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(3, 17);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 39);
-            this.label14.TabIndex = 37;
-            this.label14.Text = "B7";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Location = new System.Drawing.Point(481, 89);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(70, 78);
-            this.panel2.TabIndex = 39;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.label13.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(3, 17);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 39);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "A7";
             // 
             // panel18
             // 
@@ -881,18 +727,107 @@
             this.label21.Text = "Zone A ";
             this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
-            // btnDelete
+            // label17
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Red;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnDelete.Location = new System.Drawing.Point(501, 267);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 26;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label17.Location = new System.Drawing.Point(163, 16);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(72, 15);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "◼ Reserved";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.label19.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Orange;
+            this.label19.Location = new System.Drawing.Point(85, 16);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(72, 15);
+            this.label19.TabIndex = 33;
+            this.label19.Text = "◼ Occupied";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Lime;
+            this.label20.Location = new System.Drawing.Point(10, 16);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(69, 15);
+            this.label20.TabIndex = 32;
+            this.label20.Text = "◼ Available";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.BackgroundImage = global::ParkingSystem.Properties.Resources.Yumurta_yla_Tasarım_Dersleri;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Controls.Add(this.btnParking);
+            this.panel1.Controls.Add(this.btnDashboard);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(242, 633);
+            this.panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::ParkingSystem.Properties.Resources.Screenshot_2026_05_15_222640;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(41, 182);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(135, 40);
+            this.pictureBox2.TabIndex = 38;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnParking
+            // 
+            this.btnParking.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnParking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnParking.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnParking.Location = new System.Drawing.Point(3, 312);
+            this.btnParking.Name = "btnParking";
+            this.btnParking.Size = new System.Drawing.Size(236, 45);
+            this.btnParking.TabIndex = 2;
+            this.btnParking.Text = "🅿 Parking";
+            this.btnParking.UseVisualStyleBackColor = false;
+            this.btnParking.Click += new System.EventHandler(this.btnParking_Click);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDashboard.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDashboard.Location = new System.Drawing.Point(3, 245);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(236, 45);
+            this.btnDashboard.TabIndex = 1;
+            this.btnDashboard.Text = "🏠︎ Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogout.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnLogout.Location = new System.Drawing.Point(41, 456);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(152, 41);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "⏻ Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Dashboard
             // 
@@ -913,14 +848,11 @@
             this.Controls.Add(this.totalAvailPanel);
             this.Controls.Add(this.TotalOccPanel);
             this.Controls.Add(this.TotalsltsPanel);
-            this.Controls.Add(this.btnNewEntry);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.TotalsltsPanel.ResumeLayout(false);
             this.TotalsltsPanel.PerformLayout();
             this.TotalOccPanel.ResumeLayout(false);
@@ -932,10 +864,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecentTrans)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel17.ResumeLayout(false);
@@ -960,6 +888,8 @@
             this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -968,10 +898,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnParking;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Button btnNewEntry;
         private System.Windows.Forms.Panel TotalsltsPanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -1024,10 +952,6 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParkingNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SlotColumn;
@@ -1035,5 +959,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusColumn;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

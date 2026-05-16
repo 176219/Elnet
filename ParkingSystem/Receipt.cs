@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 
+
 namespace ParkingSystem
 {
     public partial class Receipt : Form
